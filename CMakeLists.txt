@@ -7,6 +7,7 @@ add_subdirectory(tablegen)
 add_mlir_dialect_library(MLIRZkMlDialect
   src/mlir/Dialect/zkml/ZkMlDialect.cpp
   src/mlir/Dialect/zkml/IR/Gather.cpp
+  src/mlir/Dialect/zkml/IR/DotProduct.cpp
 
   DEPENDS
 
@@ -16,15 +17,8 @@ add_mlir_dialect_library(MLIRZkMlDialect
 
   
   LINK_LIBS PUBLIC
-  MLIRComplexDialect
-  MLIRGPUOps
-  MLIRLinalgDialect
-  MLIRLinalgAnalysis
-  MLIRLinalgTransforms
+
   MLIRIR
-  MLIRPass
-  MLIRRewrite
-  MLIRTransformUtils
   )
 target_include_directories(MLIRZkMlDialect PUBLIC include)
 target_include_directories(MLIRZkMlDialect PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/tablegen)
