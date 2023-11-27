@@ -1,16 +1,10 @@
 #ifndef LIB_DIALECT_ZKML_GATHER_TD_
 #define LIB_DIALECT_ZKML_GATHER_TD_
 
-include "src/Dialects/zkml/ZkMlDialect.tb"
+include "../ZkMlDialect.td"
 include "mlir/IR/AttrTypeBase.td"
-include "libs/onnx-mlir/src/Interface/ShapeInferenceOpInterface.td"
-include "libs/onnx-mlir/src/Interface/ShapeHelperOpInterface.td"
-include "libs/onnx-mlir/src/Interface/ShapeInferenceOpInterface.td"
 
-class ZkMl_Op<string mnemonic, list<Trait> traits = []> :
-    Op<ZkMl_Dialect, mnemonic, traits>;
-
-def ZkMl_GatherOp : ZkMl_Op<"Gather", []> {
+def ZkMl_GatherOp : Op<ZkMl_Dialect, "Gather"> {
   let summary = "ONNX Gather operation";
   let arguments = (ins AnyTypeOf<[MemRefOf<[UI8]>, MemRefOf<[UI16]>, MemRefOf<[UI32]>, MemRefOf<[UI64]>, MemRefOf<[I8]>, MemRefOf<[I16]>, MemRefOf<[I32]>, MemRefOf<[I64]>, MemRefOf<[BF16]>, MemRefOf<[F16]>, MemRefOf<[F32]>, MemRefOf<[F64]>, MemRefOf<[I1]>, MemRefOf<[Complex<F32>]>, MemRefOf<[Complex<F64>]>]>:$data,
     AnyTypeOf<[MemRefOf<[I32]>, MemRefOf<[I64]>]>:$indices,
@@ -30,4 +24,4 @@ def ZkMl_GatherOp : ZkMl_Op<"Gather", []> {
   }];
 }
 
-#endif  // LIB_DIALECT_POLY_POLYOPS_TD_
+#endif  // LIB_DIALECT_ZKML_GATHER_TD_
