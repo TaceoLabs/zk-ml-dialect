@@ -9,6 +9,6 @@
 //
 //
 #define GET_OP_CLASSES
-#include "Gather.h.inc"
+#include "mlir/Dialect/zkml/IR/Gather.h.inc"
 
 #endif // LIB_DIALECT_ZKML_GATHER_TD_

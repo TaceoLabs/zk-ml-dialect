@@ -10,6 +10,6 @@ def ZkMl_Dialect : Dialect {
     The zkML dialect consists of function calls optimized for plonkish arithmetization.
   }];
 
-  let cppNamespace = "::zk_ml_toolchain::zkml";
+  let cppNamespace = "::mlir::zkml";
 }
 #endif //LIB_DIALECT_ZKML_ZKMLDIALECT_TD_

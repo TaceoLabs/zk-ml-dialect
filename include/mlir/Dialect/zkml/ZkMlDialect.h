@@ -5,6 +5,6 @@
 // have any includes.
 #include "mlir/IR/DialectImplementation.h"
 
-#include "ZkMlDialect.h.inc"
+#include "mlir/Dialect/zkml/ZkMlDialect.h.inc"
 
 #endif  // LIB_DIALECT_ZKML_DIALCET_H_

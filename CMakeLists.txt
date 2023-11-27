@@ -2,14 +2,19 @@ cmake_minimum_required(VERSION 3.19.0)
 
 project(zkml-dialect)
 include(MLIR.cmake)
+add_subdirectory(tablegen)
 
-add_mlir_library(OMZkMlOps
+add_mlir_dialect_library(MLIRZkMlDialect
   src/mlir/Dialect/zkml/ZkMlDialect.cpp
-  src/mlir/Dialect/zkml/IR/Gather/Gather.cpp
+  src/mlir/Dialect/zkml/IR/Gather.cpp
 
-  LINK_COMPONENTS
-  Core
+  DEPENDS
 
+  MLIRZKMlDialectIncGen
+  MLIRZKMlGatherIncGen
+  MLIRZKMlDotProductIncGen
+
+  
   LINK_LIBS PUBLIC
   MLIRComplexDialect
   MLIRGPUOps
@@ -20,6 +25,6 @@ add_mlir_library(OMZkMlOps
   MLIRPass
   MLIRRewrite
   MLIRTransformUtils
-
   )
-target_include_directories(OMZkMlOps PUBLIC include)
+target_include_directories(MLIRZkMlDialect PUBLIC include)
+target_include_directories(MLIRZkMlDialect PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/tablegen)
