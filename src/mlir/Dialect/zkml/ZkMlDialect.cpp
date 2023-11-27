@@ -1,5 +1,5 @@
-#include "Dialect/zkml/ZkMlDialect.h"
-#include "Dialect/zkml/Ops/Gather/Gather.h"
+#include "mlir/Dialect/zkml/ZkMlDialect.h"
+#include "mlir/Dialect/zkml/Ops/Gather/Gather.h"
 
 #include "mlir/IR/Builders.h"
 #include "llvm/ADT/TypeSwitch.h"
