@@ -4,11 +4,11 @@
 include "../ZkMlDialect.td"
 include "mlir/IR/AttrTypeBase.td"
 
-def ZkMl_GatherOp : Op<ZkMl_Dialect, "dot-product"> {
+def ZkMl_DotProductOp : Op<ZkMl_Dialect, "dot-product"> {
   let summary = "A dedicated dot-product intrinsic";
   let arguments = (ins AnyTypeOf<[MemRefOf<[UI8]>, MemRefOf<[UI16]>, MemRefOf<[UI32]>, MemRefOf<[UI64]>, MemRefOf<[I8]>, MemRefOf<[I16]>, MemRefOf<[I32]>, MemRefOf<[I64]>, MemRefOf<[BF16]>, MemRefOf<[F16]>, MemRefOf<[F32]>, MemRefOf<[F64]>, MemRefOf<[I1]>, MemRefOf<[Complex<F32>]>, MemRefOf<[Complex<F64>]>]>:$lhs,
     AnyTypeOf<[MemRefOf<[UI8]>, MemRefOf<[UI16]>, MemRefOf<[UI32]>, MemRefOf<[UI64]>, MemRefOf<[I8]>, MemRefOf<[I16]>, MemRefOf<[I32]>, MemRefOf<[I64]>, MemRefOf<[BF16]>, MemRefOf<[F16]>, MemRefOf<[F32]>, MemRefOf<[F64]>, MemRefOf<[I1]>, MemRefOf<[Complex<F32>]>, MemRefOf<[Complex<F64>]>]>:$rhs);
-  let results = (outs AnyTypeOf<[MemRefOf<[UI8]>, MemRefOf<[UI16]>, MemRefOf<[UI32]>, MemRefOf<[UI64]>, MemRefOf<[I8]>, MemRefOf<[I16]>, MemRefOf<[I32]>, MemRefOf<[I64]>, MemRefOf<[BF16]>, MemRefOf<[F16]>, MemRefOf<[F32]>, MemRefOf<[F64]>, MemRefOf<[I1]>, MemRefOf<[Complex<F32>]>, MemRefOf<[Complex<F64>]>]>:$output);
+  let results = (outs AnyTypeOf<[UI8, UI16, UI32, UI64, I8, I16, I32, I64, BF16, F16, F32, F64, I1, Complex<F32>, Complex<F64>]>:$output);
 }
 
 #endif  // LIB_DIALECT_ZKML_DOT_PRODUCT_TD_
