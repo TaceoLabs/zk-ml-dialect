@@ -6,12 +6,16 @@ add_subdirectory(tablegen)
 
 add_mlir_dialect_library(MLIRZkMlDialect
   src/mlir/Dialect/zkml/ZkMlDialect.cpp
+  src/mlir/Dialect/zkml/IR/ArgMin.cpp
+  src/mlir/Dialect/zkml/IR/ArgMax.cpp
   src/mlir/Dialect/zkml/IR/Gather.cpp
   src/mlir/Dialect/zkml/IR/DotProduct.cpp
 
   DEPENDS
 
   MLIRZKMlDialectIncGen
+  MLIRZKMlArgMinIncGen
+  MLIRZKMlArgMaxIncGen
   MLIRZKMlGatherIncGen
   MLIRZKMlDotProductIncGen
 
