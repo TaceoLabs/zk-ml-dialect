@@ -4,7 +4,7 @@
 include "../ZkMlDialect.td"
 include "mlir/IR/AttrTypeBase.td"
 
-def ZkMl_ArgMaxOp : Op<ZkMl_Dialect, "ArgMax"> {
+def ZkMl_ArgMaxOp : Op<ZkMl_Dialect, "arg-max"> {
   let summary = "A dedicated ArgMax intrinsic";
   let arguments = (ins AnyTypeOf<[F16, F32, F64]>:$acc,
     AnyTypeOf<[F16, F32, F64]>:$next, AnyTypeOf<[I16, I32, I64]>:$accIndex, Index:$nextIndex,

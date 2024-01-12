@@ -4,7 +4,7 @@
 include "../ZkMlDialect.td"
 include "mlir/IR/AttrTypeBase.td"
 
-def ZkMl_ArgMinOp : Op<ZkMl_Dialect, "ArgMin"> {
+def ZkMl_ArgMinOp : Op<ZkMl_Dialect, "arg-min"> {
   let summary = "A dedicated ArgMin intrinsic";
   let arguments = (ins AnyTypeOf<[F16, F32, F64]>:$acc,
     AnyTypeOf<[F16, F32, F64]>:$next, AnyTypeOf<[I16, I32, I64]>:$accIndex, Index:$nextIndex,
