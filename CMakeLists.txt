@@ -10,6 +10,7 @@ add_mlir_dialect_library(MLIRZkMlDialect
   src/mlir/Dialect/zkml/IR/ArgMax.cpp
   src/mlir/Dialect/zkml/IR/Gather.cpp
   src/mlir/Dialect/zkml/IR/DotProduct.cpp
+  src/mlir/Dialect/zkml/IR/Trace.cpp
 
   DEPENDS
 
@@ -18,7 +19,8 @@ add_mlir_dialect_library(MLIRZkMlDialect
   MLIRZKMlArgMaxIncGen
   MLIRZKMlGatherIncGen
   MLIRZKMlDotProductIncGen
-
+  MLIRZKMlTraceIncGen
+  MLIRZKMlOnnxAmountIncGen
   
   LINK_LIBS PUBLIC
 
