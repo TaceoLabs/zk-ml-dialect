@@ -19,14 +19,4 @@ def ZkMl_PrivateInputAttr : ZkMl_Attr<"ZkMlPrivateInput", "private"> {
   let genVerifyDecl = 1;
 }
 
-def ZkMl_PublicInputAttr : ZkMl_Attr<"ZkMlPublicInput", "public"> {
-  let summary = "An Attribute marking something as public input";
-  let description = [{
-    A simple attribute marking a value as public input
-  }];
-
-  /// Indicate that our attribute will add additional verification to the parameters.
-  let genVerifyDecl = 1;
-}
-
 #endif  // LIB_DIALECT_ZKML_ATTRIBUTES_TD_
