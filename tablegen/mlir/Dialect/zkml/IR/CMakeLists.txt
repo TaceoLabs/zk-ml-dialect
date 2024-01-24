@@ -28,3 +28,8 @@ mlir_tablegen(OnnxAmount.h.inc -gen-op-decls)
 mlir_tablegen(OnnxAmount.cpp.inc -gen-op-defs)
 add_public_tablegen_target(MLIRZKMlOnnxAmountIncGen)
 
+set(LLVM_TARGET_DEFINITIONS ZkMlAttributes.td)
+mlir_tablegen(ZkMlAttrDefs.h.inc -gen-attrdef-decls -attrdefs-dialect=zkML)
+mlir_tablegen(ZkMlAttrDefs.cpp.inc -gen-attrdef-defs -attrdefs-dialect=zkML)
+add_public_tablegen_target(MLIRZKMlAttrDefsIncGen)
+

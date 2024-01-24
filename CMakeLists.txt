@@ -21,6 +21,7 @@ add_mlir_dialect_library(MLIRZkMlDialect
   MLIRZKMlDotProductIncGen
   MLIRZKMlTraceIncGen
   MLIRZKMlOnnxAmountIncGen
+  MLIRZKMlAttrDefsIncGen
   
   LINK_LIBS PUBLIC
 
