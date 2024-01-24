@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.19.0)
 
 project(zkml-dialect)
 #include(MLIR.cmake)
-add_subdirectory(tablegen)
+add_subdirectory(tablegen/mlir/Dialect/zkml)
 
 add_mlir_dialect_library(MLIRZkMlDialect
   src/mlir/Dialect/zkml/ZkMlDialect.cpp
