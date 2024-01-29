@@ -18,6 +18,11 @@ mlir_tablegen(DotProduct.h.inc -gen-op-decls)
 mlir_tablegen(DotProduct.cpp.inc -gen-op-defs)
 add_public_tablegen_target(MLIRZKMlDotProductIncGen)
 
+set(LLVM_TARGET_DEFINITIONS Trigonometric.td)
+mlir_tablegen(Trigonometric.h.inc -gen-op-decls)
+mlir_tablegen(Trigonometric.cpp.inc -gen-op-defs)
+add_public_tablegen_target(MLIRZKMlTrigonometricIncGen)
+
 set(LLVM_TARGET_DEFINITIONS Trace.td)
 mlir_tablegen(Trace.h.inc -gen-op-decls)
 mlir_tablegen(Trace.cpp.inc -gen-op-defs)
@@ -27,6 +32,7 @@ set(LLVM_TARGET_DEFINITIONS OnnxAmount.td)
 mlir_tablegen(OnnxAmount.h.inc -gen-op-decls)
 mlir_tablegen(OnnxAmount.cpp.inc -gen-op-defs)
 add_public_tablegen_target(MLIRZKMlOnnxAmountIncGen)
+
 
 set(LLVM_TARGET_DEFINITIONS ZkMlAttributes.td)
 mlir_tablegen(ZkMlAttrDefs.h.inc -gen-attrdef-decls -attrdefs-dialect=zkML)

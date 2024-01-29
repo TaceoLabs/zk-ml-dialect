@@ -5,6 +5,7 @@
 #include "mlir/Dialect/zkml/IR/DotProduct.h"
 #include "mlir/Dialect/zkml/IR/Trace.h"
 #include "mlir/Dialect/zkml/IR/OnnxAmount.h"
+#include "mlir/Dialect/zkml/IR/Trigonometric.h"
 #include "mlir/Dialect/zkml/IR/ZkMlAttributes.hpp"
 
 #include "mlir/IR/Builders.h"
@@ -23,6 +24,9 @@
 
 #define GET_OP_CLASSES
 #include "mlir/Dialect/zkml/IR/DotProduct.cpp.inc"
+
+#define GET_OP_CLASSES
+#include "mlir/Dialect/zkml/IR/Trigonometric.cpp.inc"
 
 #define GET_OP_CLASSES
 #include "mlir/Dialect/zkml/IR/Trace.cpp.inc"
@@ -54,6 +58,11 @@ namespace mlir {
             addOperations<
 #define GET_OP_LIST
 #include "mlir/Dialect/zkml/IR/DotProduct.cpp.inc"
+                >();
+
+            addOperations<
+#define GET_OP_LIST
+#include "mlir/Dialect/zkml/IR/Trigonometric.cpp.inc"
                 >();
 
             addOperations<

@@ -9,6 +9,7 @@ add_mlir_dialect_library(MLIRZkMlDialect
   src/mlir/Dialect/zkml/IR/ArgMin.cpp
   src/mlir/Dialect/zkml/IR/ArgMax.cpp
   src/mlir/Dialect/zkml/IR/Gather.cpp
+  src/mlir/Dialect/zkml/IR/Trigonometric.cpp
   src/mlir/Dialect/zkml/IR/DotProduct.cpp
   src/mlir/Dialect/zkml/IR/Trace.cpp
 
@@ -22,6 +23,7 @@ add_mlir_dialect_library(MLIRZkMlDialect
   MLIRZKMlTraceIncGen
   MLIRZKMlOnnxAmountIncGen
   MLIRZKMlAttrDefsIncGen
+  MLIRZKMlTrigonometricIncGen
   
   LINK_LIBS PUBLIC
 
