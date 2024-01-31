@@ -18,6 +18,11 @@ mlir_tablegen(DotProduct.h.inc -gen-op-decls)
 mlir_tablegen(DotProduct.cpp.inc -gen-op-defs)
 add_public_tablegen_target(MLIRZKMlDotProductIncGen)
 
+set(LLVM_TARGET_DEFINITIONS ExpNoClip.td)
+mlir_tablegen(ExpNoClip.h.inc -gen-op-decls)
+mlir_tablegen(ExpNoClip.cpp.inc -gen-op-defs)
+add_public_tablegen_target(MLIRZKMlExpNoClipIncGen)
+
 set(LLVM_TARGET_DEFINITIONS Trigonometric.td)
 mlir_tablegen(Trigonometric.h.inc -gen-op-decls)
 mlir_tablegen(Trigonometric.cpp.inc -gen-op-defs)

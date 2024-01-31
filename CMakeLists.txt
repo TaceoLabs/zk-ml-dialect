@@ -11,6 +11,7 @@ add_mlir_dialect_library(MLIRZkMlDialect
   src/mlir/Dialect/zkml/IR/Gather.cpp
   src/mlir/Dialect/zkml/IR/Trigonometric.cpp
   src/mlir/Dialect/zkml/IR/DotProduct.cpp
+  src/mlir/Dialect/zkml/IR/ExpNoClip.cpp
   src/mlir/Dialect/zkml/IR/Trace.cpp
 
   DEPENDS
@@ -20,6 +21,7 @@ add_mlir_dialect_library(MLIRZkMlDialect
   MLIRZKMlArgMaxIncGen
   MLIRZKMlGatherIncGen
   MLIRZKMlDotProductIncGen
+  MLIRZKMlExpNoClipIncGen
   MLIRZKMlTraceIncGen
   MLIRZKMlOnnxAmountIncGen
   MLIRZKMlAttrDefsIncGen

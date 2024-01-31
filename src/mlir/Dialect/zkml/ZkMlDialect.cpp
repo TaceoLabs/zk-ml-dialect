@@ -3,10 +3,11 @@
 #include "mlir/Dialect/zkml/IR/ArgMax.h"
 #include "mlir/Dialect/zkml/IR/Gather.h"
 #include "mlir/Dialect/zkml/IR/DotProduct.h"
+#include "mlir/Dialect/zkml/IR/ExpNoClip.h"
 #include "mlir/Dialect/zkml/IR/Trace.h"
 #include "mlir/Dialect/zkml/IR/OnnxAmount.h"
 #include "mlir/Dialect/zkml/IR/Trigonometric.h"
-#include "mlir/Dialect/zkml/IR/ZkMlAttributes.hpp"
+#include "mlir/Dialect/zkml/IR/ZkMlAttributes.h"
 
 #include "mlir/IR/Builders.h"
 #include "llvm/ADT/TypeSwitch.h"
@@ -24,6 +25,9 @@
 
 #define GET_OP_CLASSES
 #include "mlir/Dialect/zkml/IR/DotProduct.cpp.inc"
+
+#define GET_OP_CLASSES
+#include "mlir/Dialect/zkml/IR/ExpNoClip.cpp.inc"
 
 #define GET_OP_CLASSES
 #include "mlir/Dialect/zkml/IR/Trigonometric.cpp.inc"
@@ -58,6 +62,11 @@ namespace mlir {
             addOperations<
 #define GET_OP_LIST
 #include "mlir/Dialect/zkml/IR/DotProduct.cpp.inc"
+                >();
+
+            addOperations<
+#define GET_OP_LIST
+#include "mlir/Dialect/zkml/IR/ExpNoClip.cpp.inc"
                 >();
 
             addOperations<
