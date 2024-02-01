@@ -6,10 +6,15 @@ include "mlir/IR/AttrTypeBase.td"
 
 def ZkMl_ArgMaxOp : Op<ZkMl_Dialect, "arg-max"> {
   let summary = "A dedicated ArgMax intrinsic";
-  let arguments = (ins AnyTypeOf<[F16, F32, F64]>:$acc,
-    AnyTypeOf<[F16, F32, F64]>:$next, AnyTypeOf<[I16, I32, I64]>:$accIndex, Index:$nextIndex,
+  let arguments = (ins 
+    AnyTypeOf<[F16, F32, F64, I1, I8, I16, I32, I64, UI1, UI8, UI16, UI32, UI64]>:$acc,
+    AnyTypeOf<[F16, F32, F64, I1, I8, I16, I32, I64, UI1, UI8, UI16, UI32, UI64]>:$next, 
+    AnyTypeOf<[I16, I32, I64]>:$accIndex, 
+    Index:$nextIndex,
    DefaultValuedAttr<I1Attr, "0">:$select_last_index);
-  let results = (outs AnyTypeOf<[F16, F32, F64]>:$max, AnyTypeOf<[I16, I32, I64]>:$maxIndex);
+  let results = (outs 
+    AnyTypeOf<[F16, F32, F64, I1, I8, I16, I32, I64, UI1, UI8, UI16, UI32, UI64]>:$max,
+    AnyTypeOf<[I16, I32, I64]>:$maxIndex);
   let extraClassDeclaration = [{
     static int getNumberOfOperands() {
       return 4;
