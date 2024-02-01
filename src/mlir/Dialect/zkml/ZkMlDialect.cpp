@@ -1,6 +1,7 @@
 #include "mlir/Dialect/zkml/ZkMlDialect.h"
 #include "mlir/Dialect/zkml/IR/ArgMin.h"
 #include "mlir/Dialect/zkml/IR/ArgMax.h"
+#include "mlir/Dialect/zkml/IR/CmpSet.h"
 #include "mlir/Dialect/zkml/IR/Gather.h"
 #include "mlir/Dialect/zkml/IR/DotProduct.h"
 #include "mlir/Dialect/zkml/IR/ExpNoClip.h"
@@ -19,6 +20,9 @@
 
 #define GET_OP_CLASSES
 #include "mlir/Dialect/zkml/IR/ArgMax.cpp.inc"
+
+#define GET_OP_CLASSES
+#include "mlir/Dialect/zkml/IR/CmpSet.cpp.inc"
 
 #define GET_OP_CLASSES
 #include "mlir/Dialect/zkml/IR/Gather.cpp.inc"
@@ -50,10 +54,17 @@ namespace mlir {
 #define GET_OP_LIST
 #include "mlir/Dialect/zkml/IR/ArgMin.cpp.inc"
                 >();
+
             addOperations<
 #define GET_OP_LIST
 #include "mlir/Dialect/zkml/IR/ArgMax.cpp.inc"
                 >();
+
+            addOperations<
+#define GET_OP_LIST
+#include "mlir/Dialect/zkml/IR/CmpSet.cpp.inc"
+                >();
+
             addOperations<
 #define GET_OP_LIST
 #include "mlir/Dialect/zkml/IR/Gather.cpp.inc"

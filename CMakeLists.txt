@@ -19,6 +19,7 @@ add_mlir_dialect_library(MLIRZkMlDialect
   MLIRZKMlDialectIncGen
   MLIRZKMlArgMinIncGen
   MLIRZKMlArgMaxIncGen
+  MLIRZKMlCmpSetIncGen
   MLIRZKMlGatherIncGen
   MLIRZKMlDotProductIncGen
   MLIRZKMlExpNoClipIncGen

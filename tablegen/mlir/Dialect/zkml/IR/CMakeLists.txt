@@ -8,6 +8,11 @@ mlir_tablegen(ArgMax.h.inc -gen-op-decls)
 mlir_tablegen(ArgMax.cpp.inc -gen-op-defs)
 add_public_tablegen_target(MLIRZKMlArgMaxIncGen)
 
+set(LLVM_TARGET_DEFINITIONS CmpSet.td)
+mlir_tablegen(CmpSet.h.inc -gen-op-decls)
+mlir_tablegen(CmpSet.cpp.inc -gen-op-defs)
+add_public_tablegen_target(MLIRZKMlCmpSetIncGen)
+
 set(LLVM_TARGET_DEFINITIONS Gather.td)
 mlir_tablegen(Gather.h.inc -gen-op-decls)
 mlir_tablegen(Gather.cpp.inc -gen-op-defs)
